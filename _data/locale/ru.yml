@@ -1,0 +1,72 @@
+language: Русский
+
+# Grammar
+joining_conjunction: " и "
+
+# Site
+# Should be URL-safe
+meta:
+  commemorations:  commemorations
+  subjects:  subjects
+  sources:  sources
+
+# UI
+navbar:
+  home: Главная
+  commemorations: дни памяти
+  subjects: Общий список 
+  sources: источники
+
+# Calendar
+calendars:
+  gregorian: Григорианский
+  julian: Юлианский
+  
+months:
+  "1": Январь
+  "2": Февраль
+  "3": Март
+  "4": Апрель
+  "5": Май
+  "6": Июнь
+  "7": Июль
+  "8": Август
+  "9": Сентябрь
+  "10": Октябрь
+  "11": Ноябрь
+  "12": Декабрь
+
+today: Сегодня
+
+# Commemoration details
+commemoration_meta:
+  type: лик
+
+commemoration_types:
+  conception: Зачатие
+  nativity: Рождество
+  repose: Repose
+  martyrdom: Мученичество
+  consecration: Освящение храма
+  translation: Перенесение мощей
+  miracle: Чудо
+  other: Прочее
+
+# Subject details
+subject_meta:
+  name: Имя
+  sex: пол
+  type: лик
+
+subject_sexes:
+  m: муж.
+  f: жен.
+
+subject_types:
+  trinitarian: троичный
+  marian: богородичный
+  angelic: ангельский
+  prophet: пророк
+  apostle: апостол
+  martyr: мученик/мученица
+  venerable: преподобный/ая
