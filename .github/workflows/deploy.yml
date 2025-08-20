@@ -40,7 +40,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll (English)
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          bundle exec jekyll build --config _config.yml,_config_en.yml
+          bundle exec jekyll build --config _config.yml,_config_fr.yml
+          bundle exec jekyll build --config _config.yml,_config_am.yml
         env:
           JEKYLL_ENV: production
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
