@@ -1,0 +1,72 @@
+language: English
+
+# Grammar
+joining_conjunction: " and "
+
+# Site
+# Should be URL-safe
+meta:
+  commemorations: &commemorations commemorations
+  subjects: &subjects subjects
+  sources: &sources sources
+
+# UI
+navbar:
+  home: Home
+  commemorations: *commemorations
+  subjects: *subjects
+  sources: *sources
+
+# Calendar
+calendars:
+  gregorian: Gregorian
+  julian: Julian
+  
+months:
+  "1": January
+  "2": February
+  "3": March
+  "4": April
+  "5": May
+  "6": June
+  "7": July
+  "8": August
+  "9": September
+  "10": October
+  "11": November
+  "12": December
+
+today: Today is
+
+# Commemoration details
+commemoration_meta:
+  type: type
+
+commemoration_types:
+  conception: Conception
+  nativity: Nativity
+  repose: Repose
+  martyrdom: Martyrdom
+  consecration: Consecration of the Church
+  translation: Translation of the Relics
+  miracle: Miracle
+  other: Other
+
+# Subject details
+subject_meta:
+  name: name
+  sex: sex
+  type: type
+
+subject_sexes:
+  m: male
+  f: female
+
+subject_types:
+  trinitarian: Trinitarian
+  marian: Marian
+  angelic: angelic
+  prophet: prophet
+  apostle: apostle
+  martyr: martyr
+  venerable: venerable

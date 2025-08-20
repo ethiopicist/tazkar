@@ -1,0 +1,9 @@
+locale: en
+destination: ./_site/en
+baseurl: /en
+
+collections:
+  commemorations:
+    permalink: /commemorations/:path/
+  subjects:
+    permalink: /subjects/:path/

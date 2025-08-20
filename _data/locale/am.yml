@@ -1,0 +1,71 @@
+language: አማርኛ
+
+# Grammar
+joining_conjunction: " እና "
+
+# Site
+# Should be URL-safe
+meta:
+  commemorations: &commemorations commemorations
+  subjects: &subjects subjects
+  sources: &sources sources
+
+# UI
+navbar:
+  home: ዋናው
+  commemorations: በዓላት
+  subjects: ቅዱሳን
+
+# Calendar
+calendars:
+  gregorian: ጎርጎርያን
+  julian: ጁሊያን
+  
+months:
+  "1": ጃንዩወሪ
+  "2": ፌብሩወሪ
+  "3": ማርች
+  "4": ኤፕሪል
+  "5": ሜይ
+  "6": ጁን
+  "7": ጁላይ
+  "8": ኦገስት
+  "9": ሴፕቴምበር
+  "10": ኦክቶበር
+  "11": ኖቬምበር
+  "12": ዲሴምበር
+
+today: ዛሬ
+
+# Commemoration details
+commemoration_meta:
+  type: type
+
+commemoration_types:
+  conception: 
+  nativity: 
+  repose: ዕረፍት
+  martyrdom: ስምዕ
+  consecration: ቅዳሴ ቤት
+  translation: 
+  miracle: ተአምር
+  other: 
+
+# Subject details
+subject_meta:
+  name: ስም
+  sex: sex
+  type: type
+
+subject_sexes:
+  m: male
+  f: female
+
+subject_types:
+  trinitarian: ሥላሴ
+  marian: ማርያማዊት
+  angelic: መልአካዊ
+  prophet: ነቢይ
+  apostle: ሐዋርያ
+  martyr: ሰማዕት
+  venerable: ጻድቅ

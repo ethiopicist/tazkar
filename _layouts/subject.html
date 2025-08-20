@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-2">{{ page.name[site.locale] }}</h1>
+    {% unless site.locale == "am" %}
+    <h2 class="subtitle is-4 mb-6">
+      <span>{{ page.name.gez | fidal }}</span>
+      <br class="is-hidden-desktop">
+      <small lang="gez-lat">{{ page.name.gez }}</small>
+    </h2>
+    {% endunless %}
+
+    <h3 class="title is-3">Commemorations</h3>
+    <table class="table">
+      <tbody>
+        {% assign key = page.slug | plus: 0 %}
+        {% assign commemorations = site.commemorations | where_exp: "com", "com.subjects contains key" %}
+        {% for commemoration in commemorations %}
+        {% assign month = commemoration.month | minus: 1 %}
+        <tr>
+          <td>{{commemoration.day | plus: 0 }} {{ site.data.locale.gez.months[month] }}</td>
+          <td></td>
+          <td>
+            <a href="{{ commemoration.url | relative_url }}">{{ commemoration.name[site.locale] }}</a>
+          </td>
+          <td>
+            <a href="{{ commemoration.url | relative_url }}">
+              <span lang="gez">{{ commemoration.name.gez | fidal }}</span>
+              <br>
+              <small lang="gez-lat">{{ commemoration.name.gez }}</small>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>

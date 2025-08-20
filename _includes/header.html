@@ -1,0 +1,67 @@
+<nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+
+    <div class="navbar-start">
+
+      <a class="navbar-item" href="{% link index.html %}">{{ "navbar.home" | localize | capitalize }}</a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="{% link commemorations.html %}">{{ "navbar.commemorations" | localize | capitalize }}</a>
+
+        <div class="navbar-dropdown">
+          {% for month in site.data.locale.gez.months %}
+          <a class="navbar-item" href="{% link {{ site.data.locale[site.locale].meta.commemorations }}/{{ forloop.index | prepend: '00' | slice: -2, 2 }}/index.html %}">
+            {% unless site.locale == "am" %}
+            <span>{{ month }}</span>
+            {% else %}
+            <span>{{ month | fidal | remove: "፡" }}</span>
+            {% endunless %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <a class="navbar-item" href="{% link {{ site.data.locale[site.locale].meta.subjects }}/index.html %}">{{ "navbar.subjects" | localize | capitalize }}</a>
+      <a class="navbar-item" href="{% link index.html %}">{{ "navbar.sources" | localize | capitalize }}</a>
+
+    </div>
+
+    <div class="navbar-end">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">{{ "language" | localize }}</a>
+
+        <div class="navbar-dropdown">
+          {% if page.localizations %}
+
+          {% for localization in page.localizations %}
+          {% unless localization.locale == "gez" %}
+          <a class="navbar-item" href="/{{ localization.url }}">{{ site.data.locale[localization.locale].language }}</a>
+          {% endunless %}
+          {% endfor %}
+
+          {% else %}
+
+          {% for locale in site.data.locale %}
+          {% unless locale[0] == "gez" %}
+          <a class="navbar-item" href="/{{ locale[0] }}/">{{ locale[1]["language"] }}</a>
+          {% endunless %}
+          {% endfor %}
+
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</nav>

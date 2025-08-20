@@ -1,0 +1,33 @@
+---
+permalink: /commemorations/
+---
+
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-2">{{ "meta.commemorations" | localize | capitalize }}</h1>
+
+    <div class="buttons is-centered">
+      {% for month in site.data.locale.gez.months %}
+      <a class="button" href="{{ forloop.index | prepend: '00' | slice: -2, 2 }}">
+        {% unless site.locale == "am" %}
+        <span>{{ month }}</span>
+        {% else %}
+        <span>{{ month | fidal }}</span>
+        {% endunless %}
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="title is-3">Search</h2>
+
+    <p>[search fields go here]</p>
+
+  </div>
+</section>

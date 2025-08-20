@@ -1,0 +1,36 @@
+language: Gǝʿǝz
+
+# Grammar
+joining_conjunction: " wa-"
+
+meta:
+  commemorations:
+  subjects:
+  sources:
+  witnesses:
+
+# Month names
+months:
+  - Maskaram
+  - Ṭəqəmt
+  - Ḫədār
+  - Tāḫśāś
+  - Ṭərr
+  - Yakkātit
+  - Maggābit
+  - Miyāzyā
+  - Gənbot
+  - Sane
+  - Ḥamle
+  - Naḥase
+  - Ṗāgʷəmen
+
+# Commemorations
+commemoration_types:
+  conception: ḍǝnsat
+  nativity: lǝdat
+  repose: ʿǝraft
+  martyrdom: sǝmʿ
+  consecration: qǝddāse bet
+  translation: fǝlsata śǝgā
+  miracle: taʾammǝr

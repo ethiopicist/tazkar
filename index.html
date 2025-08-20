@@ -1,0 +1,28 @@
+---
+---
+<section class="section">
+  <div class="container">
+
+    <h3 class="title is-3">{{ "today" | localize }} <time id="today"></time></h3>
+
+    <p>[today's commemorations appear here]</p>
+
+  </div>
+</section>
+
+<script src="{{ '/assets/scripts/jquery-3.7.1.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/scripts/conversion.min.js' | relative_url }}"></script>
+<script>
+const today = toEthiopic({
+  year: (new Date()).getFullYear(),
+  month: (new Date()).getMonth()+1,
+  date: (new Date()).getDate()
+});
+const months = JSON.parse(`{{ site.data.locale["gez"].months | jsonify }}`);
+
+$(document).ready(function() {
+
+  $("time#today").text(`${today.date} ${months[today.month-1]} ${today.year}.`).attr("datetime", (new Date().toISOString()));
+
+});
+</script>

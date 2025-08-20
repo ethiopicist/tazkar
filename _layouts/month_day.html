@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-2">{{ page.title }}</h1>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date (Gǝʿǝz)</th>
+          <th>
+            <span>{{ "calendars.gregorian" | localize }}</span>
+            <br>
+            <small>{{ "calendars.julian" | localize }}</small>
+          </th>
+          <th>Commemoration ({{ "language" | localize }})</th>
+          <th>Commemoration (Gǝʿǝz)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign days = page.commemorations | group_by: "day" %}
+        {% assign month = page.month | minus: 1 %}
+        {% for day in days %}
+        {% if days.size > 1 %}
+        <tr>
+          <th colspan="4" class="has-text-centered">
+            <a href="{{ day.name }}">{{ day.name }} {{ site.data.locale.gez.months[month] }}</a>
+          </th>
+        </tr>
+        {% endif %}
+        {% for commemoration in day.items %}
+        <tr>
+          <td>
+            <span>{{ day.name }} {{ site.data.locale.gez.months[month] }}</span>
+          </td>
+          <td>
+            <span>{{ commemoration.date_array | to_gregorian | locale_date }}</span>
+            <br>
+            <small>{{ commemoration.date_array | to_julian | locale_date }}</small>
+          </td>
+          <td>
+            <a href="{{ commemoration.url | relative_url }}">{{ commemoration.name[site.locale] }}</a>
+          </td>
+          <td>
+            <a href="{{ commemoration.url | relative_url }}">
+              <span>{{ commemoration.name.gez | fidal }}</span>
+              <br>
+              <small lang="gez-lat">{{ commemoration.name.gez }}</small>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>

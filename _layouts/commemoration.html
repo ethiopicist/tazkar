@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-2">{{ page.name[site.locale] }}</h1>
+    <h2 class="subtitle is-4">
+      <span>{{ page.name.gez | fidal }}</span>
+      <br class="is-hidden-desktop">
+      <small lang="gez-lat">{{ page.name.gez }}</small>
+    </h2>
+
+    <h3 class="title is-3">Subjects</h3>
+    {% for uid in page.subjects %}
+    {% assign subject = site.subjects | find: "slug", uid %}
+    <a href="{{ subject.url | relative_url }}">{{ subject.name[site.locale]}} </a>
+    {% endfor %}
+
+    <h3 class="title is-3">Witnesses</h3>
+    <p>Witnesses appear here</p>
+    
+    <aside class="box">
+      Tazkār ID: {{ page.uid }}
+      <br>
+      Permalink: <a href="https://w3id.org/tazkar/c/{{ page.uid }}/">https://w3id.org/tazkar/c/{{ page.uid }}/</a>
+      <br>
+      Last modified: 
+    </aside>
+
+  </div>
+</section>

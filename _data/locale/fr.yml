@@ -1,0 +1,72 @@
+language: Français
+
+# Grammar
+joining_conjunction: " et "
+
+# Site
+# Should be URL-safe
+meta:
+  commemorations: &commemorations commemorations
+  subjects: &subjects sujets
+  sources: &sources sources
+
+# UI
+navbar:
+  home: Accueil
+  commemorations: Commémorations
+  subjects: *subjects
+  sources: *sources
+
+# Calendar
+calendars:
+  gregorian: grégorien
+  julian: julien
+
+months:
+  "1": janvier
+  "2": février
+  "3": mars
+  "4": avril
+  "5": mai
+  "6": juin
+  "7": juillet
+  "8": août
+  "9": septembre
+  "10": octobre
+  "11": novembre
+  "12": décembre
+
+today: Aujourd’hui c’est le
+
+# Commemoration details
+commemoration_meta:
+  type: type
+  
+commemoration_types:
+  conception: Conception
+  nativity: Nativité
+  repose: Repos
+  martyrdom: Martyre
+  consecration: Consécration de l’église
+  translation: Translation du corps
+  miracle: Miracle
+  other: Autre
+
+# Subject details
+subject_meta:
+  name: nom
+  sex: sexe
+  type: type
+
+subject_sexes:
+  m: homme
+  f: femme
+
+subject_types:
+  trinitarian: trinitaire
+  marian: mariale
+  angelic: angélique
+  prophet: prophète
+  apostle: apôtre
+  martyr: martyr(e)
+  venerable: vénérable

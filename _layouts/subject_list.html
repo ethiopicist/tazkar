@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-2">{{ "meta.subjects" | localize | capitalize }}</h1>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{{ "subject_meta.name" | localize | capitalize }} ({{ "language" | localize }})</th>
+          <th>{{ "subject_meta.name" | localize | capitalize }} (Gǝʿǝz)</th>
+          <th>{{ "subject_meta.type" | localize | capitalize }}</th>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="text" class="input" placeholder="{{ 'subject_meta.name' | localize | capitalize }}"/>
+          </td>
+          <td>
+            <div class="select">
+              <select>
+                <option value="" selected>Filter:</option>
+                {% for type in site.data.locale[site.locale].subject_types %}
+                <option value="{{ type[0] }}">{{ type[1] }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for subject in page.subjects %}
+        <tr>
+          <td>
+            <a href="{{ subject.url | relative_url }}">{{ subject.name[site.locale] }}</a>
+          </td>
+          <td>
+            <a href="{{ subject.url | relative_url }}">
+              <span lang="gez">{{ subject.name.gez | fidal }}</span>
+              <small lang="gez-lat">{{ subject.name.gez }}</small>
+            </a>
+          </td>
+          <td>
+            <a href="{{ subject.url | relative_url }}">{{ "subject_types." | append: subject.type | localize | capitalize }}</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>

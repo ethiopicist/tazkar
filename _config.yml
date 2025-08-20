@@ -1,0 +1,45 @@
+title: Tazkār
+
+collections_dir: "_collections"
+
+collections:
+  commemorations:
+    output: true
+  subjects:
+    output: true
+  sources:
+    output: false
+  witnesses:
+    output: false
+
+defaults:
+  - # commemorations
+    scope:
+      path: "_commemorations"
+    values:
+      layout: "commemoration"
+      type: Other
+  - # subjects
+    scope:
+      path: "_subjects"
+    values:
+      layout: "subject"
+  - # global default
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+permalink: pretty
+
+exclude:
+  - CNAME
+  - LICENSE
+  - README.md
+  - assets/scripts/fuse/
+  - .git*
+  - .vscode*
+  - CITATION.cff
+
+include:
+  - assets/scripts/fuse/dist/fuse.min.js

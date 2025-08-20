@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+type: "dataset"
+title: "Tazkār"
+authors:
+  - 
+    family-names: "Valieva"
+    given-names: "Nafisa"
+    orcid: "https://orcid.org/0000-0001-8649-2963"
+  - 
+    family-names: "Dickinson"
+    given-names: "Augustine"
+    orcid: "https://orcid.org/0000-0002-7732-3524"
+repository-code: 'https://github.com/ethiopicist/tazkar'
+license: CC-BY-SA-4.0
