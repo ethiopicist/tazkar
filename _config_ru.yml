@@ -1,0 +1,9 @@
+locale: ru
+destination: ./_site/ru
+baseurl: /ru
+
+collections:
+  commemorations:
+    permalink: /commemorations/:path/
+  subjects:
+    permalink: /subjects/:path/

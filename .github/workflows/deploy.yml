@@ -44,6 +44,7 @@ jobs:
           bundle exec jekyll build --config _config.yml,_config_en.yml
           bundle exec jekyll build --config _config.yml,_config_fr.yml
           bundle exec jekyll build --config _config.yml,_config_am.yml
+          bundle exec jekyll build --config _config.yml,_config_ru.yml
         env:
           JEKYLL_ENV: production
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
