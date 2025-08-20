@@ -109,6 +109,8 @@ def possessive(thing, people, locale, joining_conjunction)
     "#{thing} de #{names}"
   when "am"
     "የ#{names} #{thing}"
+  when "ru"
+    "#{thing} #{names}"
   end
 
 end
